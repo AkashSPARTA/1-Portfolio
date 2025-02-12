@@ -6,13 +6,13 @@
     <title>Space Game</title>
     <style>
         body {
-            background-color: #000000;
+            background-color: #000;
             color: white;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            text-rendering: optimizeLegibility; /* Ensures clear text */
-            image-rendering: crisp-edges; /* Ensures clear images */
+            text-rendering: optimizeLegibility;
+            image-rendering: crisp-edges;
         }
         /* Navbar */
         .navbar {
@@ -20,20 +20,20 @@
             align-items: center;
             justify-content: space-between;
             background: #1e293b;
-            padding: 15px 30px;
+            padding: 15px;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 60px;
+            z-index: 100;
         }
         .navbar .name {
             color: white;
             font-weight: bold;
-            font-size: 2.0em;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            font-size: 1.8em;
+            flex-grow: 1;
+            text-align: center;
         }
         .back-button {
             background-color: #2ecc71;
@@ -41,7 +41,7 @@
             padding: 10px 15px;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 0.8em;
+            font-size: 0.9em;
         }
         .back-button:hover {
             background-color: #e07b00;
@@ -51,8 +51,8 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
             z-index: -1;
         }
@@ -67,48 +67,45 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 80px; /* Push content below navbar */
+            padding: 20px;
+            margin-top: 80px;
         }
         /* Game Screenshots */
         .game-screenshots {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            text-align: center;
             margin-bottom: 40px;
-        }
-        .game-screenshots h2 {
-            color: #2ecc71;
-            font-size: 1.8em;
-            margin-bottom: 10px;
         }
         .screenshot-container {
             display: flex;
-            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
         }
         .screenshot-container img {
-            width: 500px;
-            height: 300px;
-            object-fit: cover;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
             border-radius: 10px;
             cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .screenshot-container img:hover {
+            transform: scale(1.05);
         }
         /* Game Videos */
         .game-videos {
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: rgba(30, 41, 59, 0.7); /* Background color to highlight video */
+            background-color: rgba(30, 41, 59, 0.7);
             padding: 20px;
             border-radius: 10px;
-        }
-        .game-videos h2 {
-            color: #2ecc71;
-            font-size: 1.8em;
-            margin-bottom: 10px;
+            width: 90%;
+            max-width: 600px;
         }
         .game-videos video {
-            width: 520px;
-            height: 440px;
+            width: 100%;
+            height: auto;
             border-radius: 10px;
         }
         /* Fullscreen Image Modal */
@@ -129,13 +126,28 @@
             max-height: 90%;
             border-radius: 10px;
         }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px;
+            }
+            .navbar .name {
+                font-size: 1.5em;
+            }
+            .screenshot-container img {
+                max-width: 100%;
+            }
+            .game-videos {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navbar -->
     <div class="navbar">
         <a href="Project.html" class="back-button">Back</a>
-        <div class="name">Space Game</div>
+        <div class="name">Street Race</div>
     </div>
     
     <!-- Background Video -->
@@ -153,7 +165,7 @@
             <div class="screenshot-container">
                 <img src="CarGarage.png" alt="Image 1" onclick="openModal(this.src)">
                 <img src="CarIngame.png" alt="Image 2" onclick="openModal(this.src)">
-                <img src="CarGameover.png" alt="Image 2" onclick="openModal(this.src)">
+                <img src="CarGameover.png" alt="Image 3" onclick="openModal(this.src)">
             </div>
         </div>
 
