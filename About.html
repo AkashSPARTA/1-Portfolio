@@ -17,9 +17,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 1.5em;
+            font-size: 1.2em;
             background: #1e293b;
             padding: 15px 30px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
         .navbar .name {
             color: white;
@@ -28,7 +33,7 @@
         }
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 20px;
         }
         .nav-links a {
             text-decoration: none;
@@ -57,6 +62,21 @@
         .nav-links a.active {
             color: #2ecc71;
         }
+
+        /* Responsive Navbar */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .menu-toggle div {
+            width: 30px;
+            height: 3px;
+            background: white;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
         /* Background Video */
         .video-container {
             position: fixed;
@@ -73,29 +93,65 @@
             object-fit: cover;
             opacity: 0.1;
         }
+
         /* About Me Section */
         .about-me {
             text-align: center;
-            padding: 50px;
+            padding: 80px 20px;
             max-width: 800px;
             margin: auto;
+            margin-top: 100px;
         }
         .about-me h1 {
             color: #fd9800;
+            font-size: 2em;
         }
         .about-me p {
             font-size: 1.2em;
             line-height: 1.6;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 20px;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+            }
+            .nav-links a {
+                padding: 10px;
+                display: block;
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Navbar -->
     <div class="navbar">
         <div class="name">Akash S</div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="about.html" class="active">About</a>
-            <a href="Project.html" >Projects</a>
+            <a href="About.html" class="active">About</a>
+            <a href="Project.html">Projects</a>
             <a href="resume.html">Resume</a>
             <a href="Contact.html">Contact</a>
         </div>
@@ -117,5 +173,12 @@
             From FPS shooters to thrilling escape games, I enjoy experimenting with different genres and pushing creative boundaries in game development.
         </p>
     </div>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
+
 </body>
 </html>
