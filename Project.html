@@ -6,7 +6,7 @@
     <title>Projects - Akash S</title>
     <style>
         body {
-            background-color: #000000;
+            background-color: #000;
             color: white;
             font-family: Arial, sans-serif;
             margin: 0;
@@ -17,42 +17,26 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 1.5em;
+            font-size: 1.2em;
             background: #1e293b;
-            padding: 15px 30px;
+            padding: 15px 20px;
         }
         .navbar .name {
             color: white;
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 1.5em;
         }
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 20px;
         }
         .nav-links a {
             text-decoration: none;
             color: white;
-            position: relative;
-            padding-bottom: 5px;
             transition: color 0.3s;
-        }
-        .nav-links a::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            width: 0%;
-            height: 2px;
-            background-color: #fd9800;
-            transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
         }
         .nav-links a:hover {
             color: #2ecc71;
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-            left: 0;
         }
         .nav-links a.active {
             color: #2ecc71;
@@ -73,48 +57,65 @@
             object-fit: cover;
             opacity: 0.1;
         }
-        /* Centered Project Tabs */
+        /* Project Tabs */
         .project-tabs {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            gap: 40px; /* Adjust spacing between tabs */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: auto;
+            gap: 30px;
+            margin-top: 100px;
+            padding: 20px;
         }
         .project-tabs a {
             background: #1e293b;
             color: white;
-            padding: 20px;
-            height: 300px;
+            padding: 15px;
             text-align: center;
             text-decoration: none;
             font-size: 1.2em;
             border-radius: 15px;
-            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            transition: transform 0.2s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            width: 300px;
+            width: 280px;
         }
         .project-tabs a img {
             width: 100%;
-            height: 260px;
+            height: 220px;
             object-fit: cover;
             border-radius: 15px;
         }
         .project-tabs a:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 0px 20px rgba(7, 216, 24, 0.8); /* Glowing effect */
+            transform: scale(1.05);
+            box-shadow: 0px 0px 15px rgba(7, 216, 24, 0.8);
         }
-        .project-tabs a span {
-            font-size: 1em;
-            color: white;
-            text-align: center;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 10px;
+            }
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            .project-tabs {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 50px;
+            }
+            .project-tabs a {
+                width: 90%;
+                max-width: 300px;
+            }
+            .project-tabs a img {
+                height: 180px;
+            }
         }
     </style>
 </head>
@@ -137,24 +138,24 @@
         </video>
     </div>
 
-   <!-- Centered Content -->
-   <div class="project-tabs">
+    <!-- Project Section -->
+    <div class="project-tabs">
         <a href="SpaceGame.html">
-            <img src="Spacegame.png" alt="Project 1">
+            <img src="Spacegame.png" alt="Space Game">
             <span>Space Game</span>
         </a>
         <a href="DesertRunner.html">
-            <img src="DesserRun.png" alt="Project 2">
+            <img src="DesserRun.png" alt="Desert Run">
             <span>Desert Run</span>
         </a>
         <a href="CarRace.html">
-            <img src="Carrace.png" alt="Project 3">
+            <img src="Carrace.png" alt="Car Race">
             <span>Car Race</span>
         </a>
         <a href="FPS.html">
-            <img src="FPS.png" alt="Project 3">
+            <img src="FPS.png" alt="FPS Game">
             <span>FPS Game</span>
         </a>
-   </div>
+    </div>
 </body>
 </html>
