@@ -11,10 +11,9 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            text-rendering: optimizeLegibility; /* Ensures clear text */
-            image-rendering: crisp-edges; /* Ensures clear images */
+            text-rendering: optimizeLegibility;
+            image-rendering: crisp-edges;
         }
-        /* Navbar */
         .navbar {
             display: flex;
             align-items: center;
@@ -30,10 +29,9 @@
         .navbar .name {
             color: white;
             font-weight: bold;
-            font-size: 2.0em;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            font-size: 1.5em;
+            text-align: center;
+            flex: 1;
         }
         .back-button {
             background-color: #2ecc71;
@@ -46,7 +44,6 @@
         .back-button:hover {
             background-color: #e07b00;
         }
-        /* Background Video */
         .video-container {
             position: fixed;
             top: 0;
@@ -62,56 +59,38 @@
             object-fit: cover;
             opacity: 0.1;
         }
-        /* Content Section */
         .content-section {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 80px; /* Push content below navbar */
+            margin-top: 80px;
+            padding: 20px;
         }
-        /* Game Screenshots */
-        .game-screenshots {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .game-screenshots, .game-videos {
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
             margin-bottom: 40px;
-        }
-        .game-screenshots h2 {
-            color: #2ecc71;
-            font-size: 1.8em;
-            margin-bottom: 10px;
         }
         .screenshot-container {
             display: flex;
-            gap: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
         }
         .screenshot-container img {
-            width: 500px;
-            height: 300px;
-            object-fit: cover;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
             border-radius: 10px;
             cursor: pointer;
         }
-        /* Game Videos */
-        .game-videos {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: rgba(30, 41, 59, 0.7); /* Background color to highlight video */
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .game-videos h2 {
-            color: #2ecc71;
-            font-size: 1.8em;
-            margin-bottom: 10px;
-        }
         .game-videos video {
-            width: 520px;
-            height: 440px;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
             border-radius: 10px;
         }
-        /* Fullscreen Image Modal */
         .modal {
             display: none;
             position: fixed;
@@ -132,22 +111,18 @@
     </style>
 </head>
 <body>
-    <!-- Navbar -->
     <div class="navbar">
         <a href="Project.html" class="back-button">Back</a>
         <div class="name">Space Game</div>
     </div>
     
-    <!-- Background Video -->
     <div class="video-container">
         <video autoplay loop muted>
             <source src="Portfolio.mp4" type="video/mp4">
         </video>
     </div>
 
-    <!-- Main Content -->
     <div class="content-section">
-        <!-- Game Screenshots -->
         <div class="game-screenshots">
             <h2>Game Screenshots</h2>
             <div class="screenshot-container">
@@ -156,7 +131,6 @@
             </div>
         </div>
 
-        <!-- Game Videos -->
         <div class="game-videos">
             <h2>Game Videos</h2>
             <video controls>
@@ -165,7 +139,6 @@
         </div>
     </div>
 
-    <!-- Fullscreen Image Modal -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <img id="modalImage" src="">
     </div>
