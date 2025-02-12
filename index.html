@@ -20,9 +20,9 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            position: relative;
-            overflow: hidden;
             text-align: center;
+            overflow: hidden;
+            position: relative;
         }
 
         /* Background Video */
@@ -30,8 +30,8 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
             z-index: -1;
         }
@@ -48,20 +48,21 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            flex-grow: 1;
+            width: 100%;
+            padding: 20px;
         }
 
         .header-container {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .header {
-            font-size: 4em;
+            font-size: 3.5vw;
             font-weight: bold;
         }
 
         .sub-header {
-            font-size: 2em;
+            font-size: 2vw;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -96,9 +97,12 @@
         .navbar {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            font-size: 1.5em;
+            flex-wrap: wrap;
+            gap: 25px;
+            font-size: 1.5vw;
             margin-top: 30px;
+            width: 100%;
+            padding: 10px;
         }
 
         .navbar a {
@@ -136,56 +140,56 @@
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .social-links a {
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 50px;
             height: 50px;
             background: #1e1e1e;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2em;
             text-decoration: none;
             transition: background 0.3s;
         }
 
-        .social-icons {
-            display: flex;
-            gap: 15px;
+        .social-links img {
+            width: 30px;
+            height: 30px;
         }
-        .card img {
-                width: 30px;
-                height: 30px;
-        }
-
 
         .social-links a:hover {
             background: #2ecc71;
         }
 
         /* Responsive Design */
-        @media (max-width: 1024px) {
+        @media (max-width: 768px) {
             .header {
-                font-size: 3em;
+                font-size: 6vw;
             }
             .sub-header {
-                font-size: 1.8em;
+                font-size: 3vw;
             }
             .navbar {
-                font-size: 1.2em;
+                font-size: 3.5vw;
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
             }
             .social-links {
-                gap: 15px;
+                bottom: 20px;
+                gap: 10px;
             }
             .social-links a {
                 width: 40px;
                 height: 40px;
-                font-size: 1.5em;
+            }
+            .social-links img {
+                width: 25px;
+                height: 25px;
             }
         }
     </style>
@@ -201,7 +205,7 @@
 
     <!-- Content Container -->
     <div class="container">
-        <!-- Name and Sub-header (Centered) -->
+        <!-- Name and Sub-header -->
         <div class="header-container">
             <div class="header">Akash S</div>
             <div class="sub-header">
@@ -210,7 +214,7 @@
             </div>
         </div>
 
-        <!-- Navbar Below -->
+        <!-- Navbar -->
         <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="About.html">About</a>
@@ -220,13 +224,17 @@
         </nav>
     </div>
 
-    <!-- Social Links at the Bottom -->
-    <div class="card">
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/akash-srinivasan-3a59a7203/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BuoVrJLCCRkOUQapYmK1Omg%3D%3D"title="LinkedIn"><img src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000" alt="LinkedIn">
-            <a href="https://github.com/AkashSPARTA"title="GitHub"><img src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=000000" alt="GitHub">
-            <a href="mailto:akashsrinivasa169@gmail.com" title="Gmail"><img src="https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=000000" alt="Gmail"></a>
-        </div>
+    <!-- Social Links -->
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/akash-srinivasan-3a59a7203/" title="LinkedIn">
+            <img src="https://img.icons8.com/?size=100&id=13930&format=png&color=ffffff" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/AkashSPARTA" title="GitHub">
+            <img src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=ffffff" alt="GitHub">
+        </a>
+        <a href="mailto:akashsrinivasa169@gmail.com" title="Gmail">
+            <img src="https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=ffffff" alt="Gmail">
+        </a>
     </div>
 
 </body>
