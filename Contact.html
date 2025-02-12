@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Akash S</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.5em;
+            background: #1e293b;
+            padding: 15px 30px;
+        }
+        .navbar .name {
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            position: relative;
+            padding-bottom: 5px;
+            transition: color 0.3s;
+        }
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #fd9800;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+        }
+        .nav-links a:hover {
+            color: #2ecc71;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        .nav-links a.active {
+            color: #2ecc71;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        /* Background Video */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.1;
+        }
+        h1 {
+            text-align: center;
+            color: #2ecc71;
+        }
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1 1 40%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            min-height: 100px; /* Ensures consistent height */
+        }
+        .icon {
+            font-size: 2em;
+            color: #2ecc71;
+        }
+        .card img {
+            width: 30px;
+            height: 30px;
+        }
+        .info {
+            display: flex;
+            flex-direction: column;
+        }
+        .info h3 {
+            margin: 0;
+            color: #2ecc71;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px; /* Adds space between heading and icons */
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.8em;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="name">Akash S</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="Project.html">Projects</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div>
+    </div>
+    
+    <!-- Background Video -->
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="Portfolio.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="container">
+        <h1>Contact</h1>
+        <div class="contact-section">
+            <div class="card">
+                <span class="icon"></span>
+                <img src="https://img.icons8.com/?size=100&id=13800&format=png&color=000000" alt="Location">
+                <div class="info">
+                    <h3>Address</h3>
+                    <p>Tiruvallur 602001</p>
+                </div>
+            </div>
+            <div class="card">
+                <span class="icon">📧</span>
+                <div class="info">
+                    <h3>Email</h3>
+                    <p>akashsrinivasan169@gmail.com</p>
+                </div>
+            </div>
+            <div class="card">
+                <span class="icon"></span>
+                <img src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000" alt="WhatsApp">
+                <div class="info">
+                    <h3>WhatsApp</h3>
+                    <p>+91 9597784915</p>
+                </div>
+            </div>
+            <div class="card">
+                <span class="icon">🔗</span>
+                <div class="info">
+                    <h3>Social Profiles</h3>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/akash-srinivasan-3a59a7203/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BuoVrJLCCRkOUQapYmK1Omg%3D%3D" title="LinkedIn">
+                            <img src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000" alt="LinkedIn">
+                        </a>
+                        <a href="https://github.com/AkashSPARTA" title="GitHub">
+                            <img src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=000000" alt="GitHub">
+                        </a>
+                        <a href="#" title="Gmail">
+                            <img src="https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=000000" alt="Gmail">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

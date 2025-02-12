@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Game</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-rendering: optimizeLegibility; /* Ensures clear text */
+            image-rendering: crisp-edges; /* Ensures clear images */
+        }
+        /* Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #1e293b;
+            padding: 15px 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+        }
+        .navbar .name {
+            color: white;
+            font-weight: bold;
+            font-size: 2.0em;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .back-button {
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.8em;
+        }
+        .back-button:hover {
+            background-color: #e07b00;
+        }
+        /* Background Video */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.1;
+        }
+        /* Content Section */
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 80px; /* Push content below navbar */
+        }
+        /* Game Screenshots */
+        .game-screenshots {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .game-screenshots h2 {
+            color: #2ecc71;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .screenshot-container {
+            display: flex;
+            gap: 20px;
+        }
+        .screenshot-container img {
+            width: 500px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        /* Game Videos */
+        .game-videos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(30, 41, 59, 0.7); /* Background color to highlight video */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .game-videos h2 {
+            color: #2ecc71;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .game-videos video {
+            width: 520px;
+            height: 440px;
+            border-radius: 10px;
+        }
+        /* Fullscreen Image Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="Project.html" class="back-button">Back</a>
+        <div class="name">Space Game</div>
+    </div>
+    
+    <!-- Background Video -->
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="Portfolio.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-section">
+        <!-- Game Screenshots -->
+        <div class="game-screenshots">
+            <h2>Game Screenshots</h2>
+            <div class="screenshot-container">
+                <img src="Spacegamemain.png" alt="Image 1" onclick="openModal(this.src)">
+                <img src="SpacegameIngame.png" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+        </div>
+
+        <!-- Game Videos -->
+        <div class="game-videos">
+            <h2>Game Videos</h2>
+            <video controls>
+                <source src="Space Endless 2D.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <!-- Fullscreen Image Modal -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <img id="modalImage" src="">
+    </div>
+
+    <script>
+        function openModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('imageModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

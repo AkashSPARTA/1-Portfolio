@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Akash S</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.5em;
+            background: #1e293b;
+            padding: 15px 30px;
+        }
+        .navbar .name {
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            position: relative;
+            padding-bottom: 5px;
+            transition: color 0.3s;
+        }
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #fd9800;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+        }
+        .nav-links a:hover {
+            color: #2ecc71;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        .nav-links a.active {
+            color: #2ecc71;
+        }
+        /* Background Video */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.1;
+        }
+        /* Centered Project Tabs */
+        .project-tabs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px; /* Adjust spacing between tabs */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: auto;
+        }
+        .project-tabs a {
+            background: #1e293b;
+            color: white;
+            padding: 20px;
+            height: 300px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 15px;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 300px;
+        }
+        .project-tabs a img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        .project-tabs a:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 20px rgba(7, 216, 24, 0.8); /* Glowing effect */
+        }
+        .project-tabs a span {
+            font-size: 1em;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="name">Akash S</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+    
+    <!-- Background Video -->
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="Portfolio.mp4" type="video/mp4">
+        </video>
+    </div>
+
+   <!-- Centered Content -->
+   <div class="project-tabs">
+        <a href="SpaceGame.html">
+            <img src="Spacegame.png" alt="Project 1">
+            <span>Space Game</span>
+        </a>
+        <a href="DesertRunner.html">
+            <img src="DesserRun.png" alt="Project 2">
+            <span>Desert Run</span>
+        </a>
+        <a href="CarRace.html">
+            <img src="Carrace.png" alt="Project 3">
+            <span>Car Race</span>
+        </a>
+        <a href="FPS.html">
+            <img src="FPS.png" alt="Project 3">
+            <span>FPS Game</span>
+        </a>
+   </div>
+</body>
+</html>
