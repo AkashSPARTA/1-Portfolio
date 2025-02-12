@@ -11,9 +11,10 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            text-rendering: optimizeLegibility; /* Ensures clear text */
-            image-rendering: crisp-edges; /* Ensures clear images */
+            text-rendering: optimizeLegibility;
+            image-rendering: crisp-edges;
         }
+        
         /* Navbar */
         .navbar {
             display: flex;
@@ -26,14 +27,14 @@
             left: 0;
             width: 100%;
             height: 60px;
+            z-index: 100;
         }
         .navbar .name {
             color: white;
             font-weight: bold;
-            font-size: 2.0em;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            font-size: 1.5em;
+            text-align: center;
+            flex-grow: 1;
         }
         .back-button {
             background-color: #2ecc71;
@@ -41,11 +42,12 @@
             padding: 10px 15px;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 0.8em;
+            font-size: 0.9em;
         }
         .back-button:hover {
             background-color: #e07b00;
         }
+        
         /* Background Video */
         .video-container {
             position: fixed;
@@ -62,78 +64,57 @@
             object-fit: cover;
             opacity: 0.1;
         }
+        
         /* Content Section */
         .content-section {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 80px; /* Push content below navbar */
-        }
-        /* Game Screenshots */
-        .game-screenshots {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-        .game-screenshots h2 {
-            color: #2ecc71;
-            font-size: 1.8em;
-            margin-bottom: 10px;
+            margin-top: 80px;
+            padding: 20px;
         }
         
-        .screenshot-container {
-            display: flex;
-            gap: 20px;
-        }
-        .screenshot-container img {
-            width: 500px;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
-            cursor: pointer;
-        }
         /* Game Videos */
         .game-videos {
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: rgba(30, 41, 59, 0.7); /* Background color to highlight video */
+            background-color: rgba(30, 41, 59, 0.7);
             padding: 20px;
             border-radius: 10px;
+            max-width: 90%;
         }
-        .game-videos h2 {
+        .game-videos h2, .game-videos h3 {
             color: #2ecc71;
-            font-size: 1.8em;
+            font-size: 1.5em;
             margin-bottom: 10px;
-        }
-        .game-videos h3 {
-            color: #2ecc71;
-            font-size: 1.8em;
-            margin-bottom: 10px;
+            text-align: center;
         }
         .game-videos video {
-            width: 520px;
-            height: 440px;
-            border-radius: 10px;
-        }
-        /* Fullscreen Image Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            align-items: center;
-            justify-content: center;
-        }
-        .modal img {
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 600px;
             border-radius: 10px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px 20px;
+            }
+            .navbar .name {
+                font-size: 1.2em;
+            }
+            .back-button {
+                font-size: 0.8em;
+                padding: 8px 12px;
+            }
+            .content-section {
+                margin-top: 70px;
+                padding: 10px;
+            }
+            .game-videos {
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -150,11 +131,12 @@
             <source src="Portfolio.mp4" type="video/mp4">
         </video>
     </div>
-
-        <!-- Game Videos -->
+    
+    <!-- Game Videos -->
+    <div class="content-section">
         <div class="game-videos">
             <h2>Game Videos</h2>
-            <h3>Work in Process...</h3>
+            <h3>Work in Progress</h3>
             <video controls>
                 <source src="FPS Game.mp4" type="video/mp4">
             </video>
